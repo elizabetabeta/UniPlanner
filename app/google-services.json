@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "672865113141",
+    "project_id": "uniplanner-f7ab7",
+    "storage_bucket": "uniplanner-f7ab7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672865113141:android:80ba6e7d4f84c8d68a4d7c",
+        "android_client_info": {
+          "package_name": "ba.sum.fpmoz.uniplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqH-KAncv-bz3VyIBYOIUm2yef4KnkeMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
