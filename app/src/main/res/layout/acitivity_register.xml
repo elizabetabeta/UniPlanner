@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="@+id/Unesilozinku"
         app:layout_constraintStart_toStartOf="@+id/Unesilozinku"
         app:layout_constraintTop_toBottomOf="@+id/Unesilozinku"
-        app:rippleColor="@color/black"
+        app:rippleColor="@color/black" />
 
     <TextView
         android:id="@+id/Većimateprofil"
