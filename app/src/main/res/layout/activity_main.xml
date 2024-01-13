@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pozadina"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -20,6 +21,8 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="Unesite Vaš email"
             android:inputType="textEmailAddress" />
@@ -28,6 +31,8 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="Unesite Vašu lozinku"
             android:inputType="textPassword" />
@@ -36,7 +41,22 @@
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prijavi se" />
+            android:text="Prijavi se"
+            app:iconPadding="8dp" />
+
+        <TextView
+            android:id="@+id/registracijaText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Nemate račun?"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registriraj se" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
