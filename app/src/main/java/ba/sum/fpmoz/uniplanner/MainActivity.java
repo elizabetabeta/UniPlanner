@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         Intent i = new Intent(getApplicationContext(), SecondActivity.class);
+        Intent a = new Intent(getApplicationContext(), RegisterActivity.class);
 
         EditText emailTxt = findViewById(R.id.email);
         EditText passwordTxt = findViewById(R.id.password);
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = emailTxt.getText().toString();
                 String password = passwordTxt.getText().toString();
-
 
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -54,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        // Move this block outside of the loginBtn OnClickListener
+        TextView btn = findViewById(R.id.registerButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(a);
             }
         });
     }
