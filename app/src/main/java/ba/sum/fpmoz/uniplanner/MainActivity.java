@@ -26,10 +26,21 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Intent i = new Intent(getApplicationContext(), SecondActivity.class);
         Intent a = new Intent(getApplicationContext(), RegisterActivity.class);
+        boolean registrationSuccess = getIntent().getBooleanExtra("registrationSuccess", false);
+        String registeredEmail = getIntent().getStringExtra("registeredEmail");
 
         EditText emailTxt = findViewById(R.id.email);
         EditText passwordTxt = findViewById(R.id.password);
         Button loginBtn = findViewById(R.id.loginBtn);
+
+        if (registeredEmail != null && !registeredEmail.isEmpty()) {
+            emailTxt.setText(registeredEmail);
+        }
+
+        if (registrationSuccess) {
+
+            Toast.makeText(this, "Uspješno ste se registrirali. Dobrodošli! Molimo unesite lozinku.", Toast.LENGTH_SHORT).show();
+        }
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(
                                     getApplicationContext(),
-                                    "PANIKA PANIKAAA nesuspjesna prijavaaaaa",
+                                    "Neuspjesna prijava!",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -58,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Move this block outside of the loginBtn OnClickListener
         TextView btn = findViewById(R.id.registerButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
