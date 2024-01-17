@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center_horizontal">
+    android:padding="15dp"
+    android:gravity="center_horizontal"
+    android:background="?attr/colorPrimaryDark">
 
     <!-- Profile Image -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/weekPlan"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/check" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/check_circle"
+            android:contentDescription="Week Plan" />
 
         <ImageView
             android:id="@+id/calendar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/calendar" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/calendar"
+            android:contentDescription="Calendar" />
 
         <ImageView
             android:id="@+id/user_profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/profile" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/user"
+            android:contentDescription="Profile" />
 
     </LinearLayout>
 
-    <!-- First Name -->
 </LinearLayout>
