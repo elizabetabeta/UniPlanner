@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/nav_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="103dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="46dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profilna"
+            app:layout_constraintBottom_toTopOf="@+id/changePictureButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+        <Button
+            android:id="@+id/changePictureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Promijeni sliku profila"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="254dp" />
+
+        <EditText
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ime"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/surnameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/changePictureButton"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <Button
+            android:id="@+id/changeNameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promijeni ime"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="501dp" />
+
+        <EditText
+            android:id="@+id/surnameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prezime"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteY="385dp" />
+
+        <EditText
+            android:id="@+id/emailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteY="438dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
