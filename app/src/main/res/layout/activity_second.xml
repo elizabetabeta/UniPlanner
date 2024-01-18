@@ -312,7 +312,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
                 android:text="Dodaj novi plan"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textColorHighlight="@color/black"
                 android:textColorHint="@color/black"
                 android:textStyle="normal|bold"
