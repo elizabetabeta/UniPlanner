@@ -1,82 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    android:background="@drawable/pozadina1"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/nav_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content" />
 
-        <include
-            android:id="@+id/include"
-            layout="@layout/nav_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="103dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="46dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profilna"
+        app:layout_constraintBottom_toTopOf="@+id/changePictureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
-        <ImageView
-            android:id="@+id/profilePicture"
-            android:layout_width="103dp"
-            android:layout_height="124dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="46dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/profilna"
-            app:layout_constraintBottom_toTopOf="@+id/changePictureButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include" />
+    <Button
+        android:id="@+id/changePictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Promijeni sliku profila"
+        android:textStyle="normal|bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
-        <Button
-            android:id="@+id/changePictureButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Promijeni sliku profila"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="254dp" />
+    <EditText
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Ime"
+        android:textStyle="normal|bold|italic"
+        android:background="@color/cardview_light_background"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/surnameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/changePictureButton"
+        tools:layout_editor_absoluteX="8dp" />
 
-        <EditText
-            android:id="@+id/nameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ime"
-            android:textAlignment="viewStart"
-            app:layout_constraintBottom_toTopOf="@+id/surnameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/changePictureButton"
-            tools:layout_editor_absoluteX="8dp" />
+    <Button
+        android:id="@+id/changeNameButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Promijeni ime"
+        android:textStyle="normal|bold|italic"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
+        tools:layout_editor_absoluteX="0dp" />
 
-        <Button
-            android:id="@+id/changeNameButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Promijeni ime"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="501dp" />
+    <EditText
+        android:id="@+id/surnameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Prezime"
+        android:textStyle="normal|bold|italic"
+        android:background="@color/cardview_light_background"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
-        <EditText
-            android:id="@+id/surnameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prezime"
-            android:textAlignment="viewStart"
-            tools:layout_editor_absoluteY="385dp" />
-
-        <EditText
-            android:id="@+id/emailTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textAlignment="viewStart"
-            tools:layout_editor_absoluteY="438dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/emailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Email"
+        android:textStyle="normal|bold|italic"
+        android:background="@color/cardview_light_background"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surnameTextView" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
