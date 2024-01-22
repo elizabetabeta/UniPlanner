@@ -27,20 +27,20 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="200dp"
                 android:layout_height="120dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="587dp"
                 app:cardBackgroundColor="#D7BBDC"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.200"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.172">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="194dp"
                     android:layout_height="match_parent">
 
                     <TextView
@@ -53,7 +53,7 @@
                         android:textStyle="normal|bold|italic"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.12"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.075"
@@ -80,6 +80,7 @@
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
+                android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -95,34 +96,41 @@
                         app:cardBackgroundColor="#BB7CC6"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.497"
+                        app:layout_constraintHorizontal_bias="0.490"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.451">
+                        app:layout_constraintVertical_bias="0.352">
 
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <TextView
-                                android:id="@+id/textView23"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="71dp"
-                                android:layout_marginTop="62dp"
-                                android:layout_marginEnd="71dp"
-                                android:layout_marginBottom="39dp"
-                                android:fontFamily="serif"
-                                android:text="TextView"
-                                android:textSize="16sp"
-                                android:textStyle="normal|italic"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0"
-                                tools:text="29.01.2024" />
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                tools:layout_editor_absoluteX="-3dp"
+                                tools:layout_editor_absoluteY="-40dp">
+
+                                <TextView
+                                    android:id="@+id/textView23"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="71dp"
+                                    android:layout_marginTop="62dp"
+                                    android:layout_marginEnd="71dp"
+                                    android:layout_marginBottom="39dp"
+                                    android:fontFamily="serif"
+                                    android:text="TextView"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal|italic"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0"
+                                    tools:text="29.01.2024" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -155,12 +163,13 @@
                 android:layout_width="200dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="103dp"
-                android:layout_marginTop="429dp"
+                android:layout_marginTop="260dp"
                 android:layout_marginEnd="108dp"
                 android:layout_marginBottom="182dp"
                 app:cardBackgroundColor="#D7BBDC"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.200"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -215,7 +224,7 @@
                 android:layout_width="200dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="101dp"
-                android:layout_marginTop="570dp"
+                android:layout_marginTop="380dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginBottom="41dp"
                 app:cardBackgroundColor="#BB7CC6"
@@ -258,8 +267,55 @@
                     tools:text="Opis:" />
 
             </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="635dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="55dp"
+            android:fontFamily="serif"
+            android:text="Button"
+            android:textStyle="normal|bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Uredi plan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="226dp"
+            android:layout_marginTop="631dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="52dp"
+            android:fontFamily="serif"
+            android:text="Button"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textStyle="normal|bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Obriši plan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
