@@ -58,6 +58,7 @@ public class AddplanActivity extends AppCompatActivity {
                 int dayOfWeekId = getDayOfWeekId(dayOfWeek);
 
                 Plan newPlan = new Plan(name, dayOfWeekId, time, description);
+
                 databaseReference.push().setValue(newPlan)
                         .addOnCompleteListener(AddplanActivity.this, new OnCompleteListener<Void>() {
                             @Override

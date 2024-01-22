@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,9 +82,20 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot planSnapshot : dataSnapshot.getChildren()) {
-                    Plan plan = planSnapshot.getValue(Plan.class);
+                    final Plan plan = planSnapshot.getValue(Plan.class);
                     if (plan != null) {
                         addPlanToLayout(plan);
+
+                        // Add OnClickListener for each plan name
+                        TextView planNameTextView = getPlanNameTextView(plan.getDayOfWeekId());
+                        if (planNameTextView != null) {
+                            planNameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    openViewPlanActivity(plan);
+                                }
+                            });
+                        }
                     }
                 }
             }
@@ -92,6 +104,36 @@ public class SecondActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+    }
+
+    private TextView getPlanNameTextView(int dayOfWeekId) {
+        switch (dayOfWeekId) {
+            case 1:
+                return findViewById(R.id.textViewPlanNamePon);
+            case 2:
+                return findViewById(R.id.textViewPlanNameUto);
+            case 3:
+                return findViewById(R.id.textViewPlanNameSri);
+            case 4:
+                return findViewById(R.id.textViewPlanNameCet);
+            case 5:
+                return findViewById(R.id.textViewPlanNamePet);
+            case 6:
+                return findViewById(R.id.textViewPlanNameSub);
+            case 7:
+                return findViewById(R.id.textViewPlanNameNed);
+            default:
+                return null;
+        }
+    }
+
+    private void openViewPlanActivity(Plan plan) {
+        Intent intent = new Intent(SecondActivity.this, ViewplanActivity.class);
+        intent.putExtra("planName", plan.getName());
+        intent.putExtra("dayOfWeek", plan.getDayOfWeek());
+        intent.putExtra("time", plan.getTime());
+        intent.putExtra("description", plan.getDescription());
+        startActivity(intent);
     }
 
     private void addPlanToLayout(Plan plan) {
