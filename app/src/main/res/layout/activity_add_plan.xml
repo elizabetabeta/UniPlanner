@@ -8,12 +8,6 @@
     tools:context=".RegisterActivity"
     android:background="@drawable/pozadina1">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/nav_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/back" />
 
 
     <EditText
@@ -115,19 +109,24 @@
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="313dp"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="75dp"
             android:layout_marginBottom="598dp"
             android:drawableLeft="@drawable/back"
-            android:text="/"
-            android:textColor="#ff6750a4"
+            android:fontFamily="serif"
+            android:text="Natrag"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="normal|bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <Button
