@@ -15,12 +15,20 @@ public class CalendarActivity extends AppCompatActivity {
     ImageView weekPlanIcon;
     ImageView calendarIcon;
     ImageView userProfileIcon;
-    Button btnDodajPlan;
+    Button button3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+        button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalendarActivity.this, AddplanActivity.class);
+                startActivity(intent);
+            }
+        });
 
         weekPlanIcon = findViewById(R.id.weekPlan);
         calendarIcon = findViewById(R.id.calendar);

@@ -44,13 +44,14 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/textPlanName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="serif"
-                        android:text="TextView"
                         android:textSize="20sp"
+                        android:text="Naziv:"
                         android:textStyle="normal|bold|italic"
+                        android:textColor="@color/black"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -60,7 +61,7 @@
                         tools:text="Naziv:" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textViewPlanName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="60dp"
@@ -68,14 +69,13 @@
                         android:layout_marginEnd="82dp"
                         android:layout_marginBottom="51dp"
                         android:fontFamily="serif"
-                        android:text="TextView"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="normal|italic"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView14"
-                        tools:text="Seminarski rad" />
+                        app:layout_constraintTop_toBottomOf="@+id/textPlanName" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -113,7 +113,7 @@
                                 tools:layout_editor_absoluteY="-40dp">
 
                                 <TextView
-                                    android:id="@+id/textView23"
+                                    android:id="@+id/textViewDayOfWeek"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="71dp"
@@ -121,25 +121,25 @@
                                     android:layout_marginEnd="71dp"
                                     android:layout_marginBottom="39dp"
                                     android:fontFamily="serif"
-                                    android:text="TextView"
                                     android:textSize="16sp"
+                                    android:textColor="@color/black"
                                     android:textStyle="normal|italic"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="1.0"
-                                    tools:text="Utorak" />
+                                    app:layout_constraintVertical_bias="1.0" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/textDayOfWeek"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
-                            android:text="TextView"
                             android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:text="Dan u tjednu:"
                             android:textStyle="normal|bold|italic"
                             tools:text="Dan u tjednu:" />
 
@@ -178,7 +178,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView28"
+                        android:id="@+id/textViewTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="67dp"
@@ -186,25 +186,25 @@
                         android:layout_marginEnd="64dp"
                         android:layout_marginBottom="54dp"
                         android:fontFamily="serif"
-                        android:text="TextView"
                         android:textSize="16sp"
+                        android:textColor="@color/black"
                         android:textStyle="normal|italic"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="15:00" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/textTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
-                    android:text="TextView"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:text="Vrijeme:"
                     android:textStyle="normal|bold|italic"
-                    tools:text="Vrijeme:" />
+                    tools:text="Vrijeme:"/>
 
 
             </androidx.cardview.widget.CardView>
@@ -238,7 +238,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView30"
+                        android:id="@+id/textViewDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="69dp"
@@ -246,25 +246,25 @@
                         android:layout_marginEnd="73dp"
                         android:layout_marginBottom="62dp"
                         android:fontFamily="serif"
-                        android:text="TextView"
                         android:textSize="16sp"
+                        android:textColor="@color/black"
                         android:textStyle="normal|italic"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Dovršiti seminarski rad" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/textDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
-                    android:text="TextView"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:text="Opis plana:"
                     android:textStyle="normal|bold|italic"
-                    tools:text="Opis:" />
+                    tools:text="Opis plana:" />
 
             </androidx.cardview.widget.CardView>
 
@@ -276,7 +276,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/urediBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="33dp"
@@ -284,8 +284,8 @@
             android:layout_marginEnd="200dp"
             android:layout_marginBottom="55dp"
             android:fontFamily="serif"
-            android:text="Button"
             android:textStyle="normal|bold|italic"
+            android:text="Uredi plan"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -294,14 +294,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/obrisiBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="226dp"
@@ -309,9 +306,9 @@
             android:layout_marginEnd="33dp"
             android:layout_marginBottom="52dp"
             android:fontFamily="serif"
-            android:text="Button"
-            android:textColor="@color/black"
             android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:text="Obriši plan"
             android:textStyle="normal|bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

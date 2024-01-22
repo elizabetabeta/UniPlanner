@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">UniPlanner</string>
-    <string name="dobrodo_li_u_na_u_aplikaciju">Dobrodošli u našu aplikaciju!</string>
+
+    <string-array name="days_array">
+        <item>Ponedjeljak</item>
+        <item>Utorak</item>
+        <item>Srijeda</item>
+        <item>Četvrtak</item>
+        <item>Petak</item>
+        <item>Subota</item>
+        <item>Nedjelja</item>
+    </string-array>
 </resources>

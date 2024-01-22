@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,12 +27,21 @@ public class AddplanActivity extends AppCompatActivity {
     private Spinner dayOfWeekSpinner;
     private EditText timeEditText;
     private EditText descriptionEditText;
-
+    Button button5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_plan);
 
+        button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddplanActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+        
         databaseReference = FirebaseDatabase.getInstance().getReference("Plans");
 
         planNameEditText = findViewById(R.id.PlanName);
@@ -58,6 +68,7 @@ public class AddplanActivity extends AppCompatActivity {
                 int dayOfWeekId = getDayOfWeekId(dayOfWeek);
 
                 Plan newPlan = new Plan(name, dayOfWeekId, time, description);
+
                 databaseReference.push().setValue(newPlan)
                         .addOnCompleteListener(AddplanActivity.this, new OnCompleteListener<Void>() {
                             @Override
