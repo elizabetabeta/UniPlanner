@@ -408,7 +408,7 @@
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/black"
                 android:textColorHint="@color/black"
-                android:textStyle="normal|bold"
+                android:textStyle="normal|bold|italic"
                 app:iconTint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

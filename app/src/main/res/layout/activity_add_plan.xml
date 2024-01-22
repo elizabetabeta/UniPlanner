@@ -38,23 +38,19 @@
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/black"
         android:textStyle="normal|italic"
-        app:layout_constraintBottom_toTopOf="@+id/PlanDate"
+        app:layout_constraintBottom_toTopOf="@+id/PlanDaySpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/PlanDate"
+    <Spinner
+        android:id="@+id/PlanDaySpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
         android:background="@color/cardview_light_background"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="Izaberi datum:"
-        android:inputType="date"
         android:paddingLeft="30dp"
         android:paddingTop="15dp"
         android:paddingRight="12dp"
@@ -62,26 +58,22 @@
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/black"
-        android:textStyle="normal|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/PlanName"
-        app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintTop_toBottomOf="@+id/PlanName" />
 
     <EditText
         android:id="@+id/PlanTime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/cardview_light_background"
         android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="serif"
-        android:hint="Izaberi vrijeme:"
-        android:inputType="time"
+        android:hint="Vrijeme plana"
+        android:inputType="text"
         android:paddingLeft="30dp"
         android:paddingTop="15dp"
         android:paddingRight="12dp"
@@ -91,10 +83,8 @@
         android:textColorHint="@color/black"
         android:textStyle="normal|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/PlanDate"
-        app:layout_constraintTop_toBottomOf="@+id/PlanDate" />
-
+        app:layout_constraintStart_toStartOf="@+id/PlanDaySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/PlanDaySpinner" />
     <EditText
         android:id="@+id/PlanDescription"
         android:layout_width="0dp"
