@@ -33,6 +33,34 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        weekPlanIcon = findViewById(R.id.weekPlan);
+        calendarIcon = findViewById(R.id.calendar);
+        userProfileIcon = findViewById(R.id.user_profile_image);
+        btnDodajPlan = findViewById(R.id.button);
+
+        weekPlanIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        userProfileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Plans");
