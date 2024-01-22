@@ -401,8 +401,10 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginEnd="75dp"
                 android:fontFamily="serif"
                 android:text="Dodaj novi plan"
                 android:textColor="@color/white"
