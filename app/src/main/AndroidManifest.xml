@@ -16,6 +16,18 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".AddplanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewplanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditplanActivity"
+            android:exported="false" />
+        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
@@ -27,9 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CalendarActivity"
-            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
