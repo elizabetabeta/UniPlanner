@@ -15,11 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ViewplanActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     Button obrisiBtn;
+    Button natragBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_plan);
+
+        natragBtn = findViewById(R.id.natragBtn);
+        natragBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewplanActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 

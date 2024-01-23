@@ -16,8 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -28,8 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView calendarIcon;
     ImageView userProfileIcon;
     Button logoutBtn, changePictureButton;
-
-    // Firebase
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     StorageReference storageReference;
@@ -71,17 +72,13 @@ public class ProfileActivity extends AppCompatActivity {
         userProfileIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // No need to start the same activity
-                // Remove the following lines
-                // Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                // startActivity(intent);
+
             }
         });
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Call the logout method
                 logout();
             }
         });
@@ -90,6 +87,38 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openImageChooser();
+            }
+        });
+
+        fetchAndDisplayProfilePicture();
+
+    }
+    private void fetchAndDisplayProfilePicture() {
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users")
+                .child(firebaseUser.getUid());
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.hasChild("profileImageUrl")) {
+                    String profileImageUrl = dataSnapshot.child("profileImageUrl").getValue(String.class);
+
+                    if (profileImageUrl != null && !profileImageUrl.isEmpty()) {
+                        ImageView updatedProfilePicture = findViewById(R.id.updatedProfilePicture);
+                        updatedProfilePicture.setVisibility(View.VISIBLE);
+
+                        Picasso.get().invalidate(profileImageUrl);
+                        Picasso.get().load(profileImageUrl).into(updatedProfilePicture);
+                    } else {
+
+                        ImageView updatedProfilePicture = findViewById(R.id.updatedProfilePicture);
+                        updatedProfilePicture.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
     }
@@ -124,7 +153,6 @@ public class ProfileActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Toast.makeText(ProfileActivity.this, "Slika profila promijenja!", Toast.LENGTH_SHORT).show();
 
-                        // Get the download URL and update the user's profile
                         fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
                             firebaseUser.updateProfile(buildProfileUpdateRequest(uri.toString()))
                                     .addOnCompleteListener(task -> {
@@ -136,7 +164,6 @@ public class ProfileActivity extends AppCompatActivity {
                                             ImageView profilePicture = findViewById(R.id.profilePicture);
                                             profilePicture.setVisibility(View.GONE);
 
-                                            //
                                             ImageView updatedProfilePicture = findViewById(R.id.updatedProfilePicture);
                                             updatedProfilePicture.setVisibility(View.VISIBLE);
                                             Picasso.get().load(uri.toString()).into(updatedProfilePicture);
@@ -159,10 +186,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         userRef.child("profileImageUrl").setValue(profileImageUrl)
                 .addOnSuccessListener(aVoid -> {
-                    // Database update successful
                 })
                 .addOnFailureListener(e -> {
-                    // Database update failed
                     Toast.makeText(ProfileActivity.this, "Neuspješna promjena slike profila.", Toast.LENGTH_SHORT).show();
                 });
     }
