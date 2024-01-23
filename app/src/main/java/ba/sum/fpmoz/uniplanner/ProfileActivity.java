@@ -122,7 +122,7 @@ public class ProfileActivity extends AppCompatActivity {
             fileReference.putFile(imageUri)
                     .addOnSuccessListener(taskSnapshot -> {
                         progressDialog.dismiss();
-                        Toast.makeText(ProfileActivity.this, "Slika profila promijenja!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this, "Slika profila promjenjena!", Toast.LENGTH_SHORT).show();
 
                         // Get the download URL and update the user's profile
                         fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
