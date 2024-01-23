@@ -6,7 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,6 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
         firebaseUser = firebaseAuth.getCurrentUser();
         storageReference = FirebaseStorage.getInstance().getReference("profile_images");
 
+
         weekPlanIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,12 +72,17 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         userProfileIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
+
+
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +99,16 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         fetchAndDisplayProfilePicture();
+        displayUserInfo();
 
+    }
+    private void displayUserInfo() {
+        if (firebaseUser != null) {
+            String email = firebaseUser.getEmail();
+
+            TextView emailTextView = findViewById(R.id.emailTextView);
+            emailTextView.setText(email);
+        }
     }
     private void fetchAndDisplayProfilePicture() {
         DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users")
