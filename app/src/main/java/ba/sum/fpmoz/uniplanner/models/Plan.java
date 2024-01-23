@@ -7,12 +7,14 @@ public class Plan {
     private String time;
     private String description;
     private int dayOfWeekId;
+    private String userId;
 
     public Plan() {
     }
 
-    public Plan(String planId, String name, int dayOfWeekId, String time, String description) {
+    public Plan(String planId, String userId, String name, int dayOfWeekId, String time, String description) {
         this.planId = planId;
+        this.userId = userId;
         this.name = name;
         this.dayOfWeekId = dayOfWeekId;
         this.time = time;
@@ -67,4 +69,11 @@ public class Plan {
         this.dayOfWeekId = dayOfWeekId;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

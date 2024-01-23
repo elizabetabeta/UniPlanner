@@ -15,8 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 import ba.sum.fpmoz.uniplanner.models.Plan;
 
@@ -64,16 +67,14 @@ public class AddplanActivity extends AppCompatActivity {
                 String dayOfWeek = dayOfWeekSpinner.getSelectedItem().toString();
                 String time = timeEditText.getText().toString();
                 String description = descriptionEditText.getText().toString();
+                String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
                 int dayOfWeekId = getDayOfWeekId(dayOfWeek);
 
-                // Generate a unique planId using push().getKey()
                 String planId = databaseReference.push().getKey();
 
-                // Create a new plan with the generated planId
-                Plan newPlan = new Plan(planId, name, dayOfWeekId, time, description);
+                Plan newPlan = new Plan(planId, userId, name, dayOfWeekId, time, description);
 
-                // Set the planId in the database
                 databaseReference.child(planId).setValue(newPlan)
                         .addOnCompleteListener(AddplanActivity.this, new OnCompleteListener<Void>() {
                             @Override

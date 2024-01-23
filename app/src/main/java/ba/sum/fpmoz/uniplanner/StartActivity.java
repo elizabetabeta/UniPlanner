@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class StartActivity extends AppCompatActivity {
 
     TextView welcomeHeading;
-    String originalHeading = "Dobrodošli u našu aplikaciju!";
+    String originalHeading = "Uni Planner!";
     int index = 0;
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
@@ -39,7 +39,7 @@ public class StartActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            }, 4000);
+            }, 2000);
         }
     };
 
