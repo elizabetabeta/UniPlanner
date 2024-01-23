@@ -71,6 +71,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Ponedjeljak"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +79,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.049"
-                            tools:text="Ponedjeljak" />
+                            tools:text="PONEDJELJAK" />
 
                         <TextView
                             android:id="@+id/textViewPlanNamePon"
@@ -128,6 +129,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Utorak"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +137,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.069"
-                            tools:text="Utorak" />
+                            tools:text="UTORAK" />
 
                         <TextView
                             android:id="@+id/textViewPlanNameUto"
@@ -170,6 +172,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Srijeda"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +180,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.039"
-                            tools:text="Srijeda" />
+                            tools:text="SRIJEDA" />
 
                         <TextView
                             android:id="@+id/textViewPlanNameSri"
@@ -227,6 +230,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Četvrtak"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +238,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.069"
-                            tools:text="Četvrtak" />
+                            tools:text="ČETVRTAK" />
 
                         <TextView
                             android:id="@+id/textViewPlanNameCet"
@@ -270,6 +274,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Petak"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +282,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.039"
-                            tools:text="Petak" />
+                            tools:text="PETAK" />
 
                         <TextView
                             android:id="@+id/textViewPlanNamePet"
@@ -327,13 +332,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Subota"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.049"
-                            tools:text="Subota" />
+                            tools:text="SUBOTA" />
 
                         <TextView
                             android:id="@+id/textViewPlanNameSub"
@@ -369,13 +375,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="Nedjelja"
+                            android:textColor="#ff6750a4"
                             android:textStyle="normal|bold|italic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.059"
-                            tools:text="Nedjelja" />
+                            tools:text="NEDJELJA" />
 
                         <TextView
                             android:id="@+id/textViewPlanNameNed"
