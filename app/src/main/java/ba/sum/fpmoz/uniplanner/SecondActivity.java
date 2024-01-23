@@ -129,6 +129,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private void openViewPlanActivity(Plan plan) {
         Intent intent = new Intent(SecondActivity.this, ViewplanActivity.class);
+        intent.putExtra("planId", plan.getPlanId());
         intent.putExtra("planName", plan.getName());
         intent.putExtra("dayOfWeek", plan.getDayOfWeek());
         intent.putExtra("time", plan.getTime());
