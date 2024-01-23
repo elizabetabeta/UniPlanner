@@ -25,9 +25,6 @@
             android:name=".ViewplanActivity"
             android:exported="false" />
         <activity
-            android:name=".EditplanActivity"
-            android:exported="false" />
-        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity

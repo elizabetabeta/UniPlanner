@@ -41,7 +41,7 @@ public class AddplanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Plans");
 
         planNameEditText = findViewById(R.id.PlanName);
@@ -67,19 +67,24 @@ public class AddplanActivity extends AppCompatActivity {
 
                 int dayOfWeekId = getDayOfWeekId(dayOfWeek);
 
-                Plan newPlan = new Plan(name, dayOfWeekId, time, description);
+                // Generate a unique planId using push().getKey()
+                String planId = databaseReference.push().getKey();
 
-                databaseReference.push().setValue(newPlan)
+                // Create a new plan with the generated planId
+                Plan newPlan = new Plan(planId, name, dayOfWeekId, time, description);
+
+                // Set the planId in the database
+                databaseReference.child(planId).setValue(newPlan)
                         .addOnCompleteListener(AddplanActivity.this, new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(AddplanActivity.this, "Plan successfully added!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(AddplanActivity.this, "Plan uspješno  dodan!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(AddplanActivity.this, SecondActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    Toast.makeText(AddplanActivity.this, "Failed to add plan.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(AddplanActivity.this, "Niste uspjeli dodati plan.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

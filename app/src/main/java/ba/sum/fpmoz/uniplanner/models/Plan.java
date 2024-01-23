@@ -1,6 +1,7 @@
 package ba.sum.fpmoz.uniplanner.models;
 
 public class Plan {
+    private String planId;
     private String name;
     private String dayOfWeek;
     private String time;
@@ -10,11 +11,20 @@ public class Plan {
     public Plan() {
     }
 
-    public Plan(String name, int dayOfWeekId, String time, String description) {
+    public Plan(String planId, String name, int dayOfWeekId, String time, String description) {
+        this.planId = planId;
         this.name = name;
         this.dayOfWeekId = dayOfWeekId;
         this.time = time;
         this.description = description;
+    }
+
+    public String getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(String planId) {
+        this.planId = planId;
     }
 
     public String getName() {
@@ -56,4 +66,5 @@ public class Plan {
     public void setDayOfWeekId(int dayOfWeekId) {
         this.dayOfWeekId = dayOfWeekId;
     }
+
 }
