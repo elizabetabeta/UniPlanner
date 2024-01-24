@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@drawable/pozadina1">
+
+
+
+    <EditText
+        android:id="@+id/PlanName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/cardview_light_background"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Naziv plana:"
+        android:inputType="text"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        android:textStyle="normal|italic"
+        app:layout_constraintBottom_toTopOf="@+id/PlanDaySpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/PlanDaySpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/cardview_light_background"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PlanName"
+        app:layout_constraintTop_toBottomOf="@+id/PlanName" />
+
+    <EditText
+        android:id="@+id/PlanTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/cardview_light_background"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Vrijeme plana"
+        android:inputType="text"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        android:textStyle="normal|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PlanDaySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/PlanDaySpinner" />
+    <EditText
+        android:id="@+id/PlanDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/cardview_light_background"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Opis plana:"
+        android:inputType="text"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        android:textStyle="normal|italic"
+        app:layout_constraintEnd_toEndOf="@+id/PlanTime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/PlanTime"
+        app:layout_constraintTop_toBottomOf="@+id/PlanTime" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="598dp"
+            android:drawableLeft="@drawable/back"
+            android:fontFamily="serif"
+            android:text="Natrag"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="normal|bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="566dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="117dp"
+            android:fontFamily="serif"
+            android:text="Dodaj plan"
+            android:textStyle="normal|bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

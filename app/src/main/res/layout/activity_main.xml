@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -15,33 +16,58 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.627">
 
         <EditText
             android:id="@+id/email"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_margin="5dp"
-            android:background="#FFFFFF"
+            android:background="@color/white"
             android:ems="10"
+            android:fontFamily="serif"
             android:hint="Unesite Vaš email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="normal|italic" />
 
         <EditText
             android:id="@+id/password"
+            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_margin="5dp"
             android:background="#FFFFFF"
             android:ems="10"
+            android:fontFamily="serif"
             android:hint="Unesite Vašu lozinku"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="normal|italic" />
+
+        <CheckBox
+            android:id="@+id/rememberMeCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zapamti me"
+            android:textAlignment="viewStart" />
 
         <Button
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/login"
+            android:fontFamily="serif"
             android:text="Prijavi se"
+            android:textStyle="normal|bold|italic"
             app:iconPadding="8dp" />
 
         <TextView
@@ -49,14 +75,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:fontFamily="serif"
             android:text="Nemate račun?"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registriraj se" />
+            android:textAlignment="center"
+            android:textStyle="normal|italic" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:drawableLeft="@drawable/registration"
+        android:fontFamily="serif"
+        android:text="Registriraj se"
+        android:textStyle="normal|bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintVertical_bias="0.239" />
 </androidx.constraintlayout.widget.ConstraintLayout>
