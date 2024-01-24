@@ -2,9 +2,11 @@ package ba.sum.fpmoz.uniplanner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,6 +37,8 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        loadPlans();
+
         weekPlanIcon = findViewById(R.id.weekPlan);
         calendarIcon = findViewById(R.id.calendar);
         userProfileIcon = findViewById(R.id.user_profile_image);
@@ -43,8 +47,8 @@ public class SecondActivity extends AppCompatActivity {
         weekPlanIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SecondActivity.this, SecondActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(SecondActivity.this, SecondActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -81,6 +85,11 @@ public class SecondActivity extends AppCompatActivity {
     private void loadPlans() {
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        if (databaseReference == null) {
+            Log.e("SecondActivity", "Database reference is null");
+            return;
+        }
+
         databaseReference.orderByChild("userId").equalTo(currentUserId).addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -90,8 +99,8 @@ public class SecondActivity extends AppCompatActivity {
                     if (plan != null) {
                         addPlanToLayout(plan);
 
-                        // Add OnClickListener for each plan name
-                        TextView planNameTextView = getPlanNameTextView(plan.getDayOfWeekId());
+                        LinearLayout planNameTextView = getPlanContainerLayout(plan.getDayOfWeekId());
+
                         if (planNameTextView != null) {
                             planNameTextView.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -110,22 +119,23 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    private TextView getPlanNameTextView(int dayOfWeekId) {
+
+    private LinearLayout getPlanContainerLayout(int dayOfWeekId) {
         switch (dayOfWeekId) {
             case 1:
-                return findViewById(R.id.textViewPlanNamePon);
+                return findViewById(R.id.planContainerLayoutPon);
             case 2:
-                return findViewById(R.id.textViewPlanNameUto);
+                return findViewById(R.id.planContainerLayoutUto);
             case 3:
-                return findViewById(R.id.textViewPlanNameSri);
+                return findViewById(R.id.planContainerLayoutSri);
             case 4:
-                return findViewById(R.id.textViewPlanNameCet);
+                return findViewById(R.id.planContainerLayoutCet);
             case 5:
-                return findViewById(R.id.textViewPlanNamePet);
+                return findViewById(R.id.planContainerLayoutPet);
             case 6:
-                return findViewById(R.id.textViewPlanNameSub);
+                return findViewById(R.id.planContainerLayoutSub);
             case 7:
-                return findViewById(R.id.textViewPlanNameNed);
+                return findViewById(R.id.planContainerLayoutNed);
             default:
                 return null;
         }
@@ -135,10 +145,15 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent = new Intent(SecondActivity.this, ViewplanActivity.class);
         intent.putExtra("planId", plan.getPlanId());
         intent.putExtra("planName", plan.getName());
-        intent.putExtra("dayOfWeek", plan.getDayOfWeek());
+        intent.putExtra("dayOfWeek", plan.getDayOfWeekId());
         intent.putExtra("time", plan.getTime());
         intent.putExtra("description", plan.getDescription());
         startActivity(intent);
+
+        //Log.d("IntentValues", "planName: " + plan.getName());
+        //Log.d("IntentValues", "dayOfWeek: " + plan.getDayOfWeekId());
+        //Log.d("IntentValues", "time: " + plan.getTime());
+        //Log.d("IntentValues", "description: " + plan.getDescription());
     }
 
     private void addPlanToLayout(Plan plan) {
@@ -147,40 +162,25 @@ public class SecondActivity extends AppCompatActivity {
 
         if (cardViewId != 0) {
             CardView cardView = findViewById(cardViewId);
-            MaterialTextView planNameTextView = null;
 
-            switch (dayOfWeekId) {
-                case 1:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNamePon);
-                    break;
-                case 2:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNameUto);
-                    break;
-                case 3:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNameSri);
-                    break;
-                case 4:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNameCet);
-                    break;
-                case 5:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNamePet);
-                    break;
-                case 6:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNameSub);
-                    break;
-                case 7:
-                    planNameTextView = cardView.findViewById(R.id.textViewPlanNameNed);
-                    break;
-                default:
-                    break;
-            }
+            MaterialTextView planNameTextView = new MaterialTextView(this);
+            planNameTextView.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            planNameTextView.setText(plan.getName());
 
-            if (planNameTextView != null) {
-                planNameTextView.setText(plan.getName());
-            }
+            LinearLayout planContainerLayout = getPlanContainerLayout(dayOfWeekId);
+
+            planContainerLayout.addView(planNameTextView);
+
+            planNameTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openViewPlanActivity(plan);
+                }
+            });
         }
     }
-
     private int getCardViewIdByDayOfWeekId(int dayOfWeekId) {
         switch (dayOfWeekId) {
             case 1:

@@ -46,8 +46,8 @@ public class CalendarActivity extends AppCompatActivity {
         calendarIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CalendarActivity.this, CalendarActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(CalendarActivity.this, CalendarActivity.class);
+                //startActivity(intent);
             }
         });
 

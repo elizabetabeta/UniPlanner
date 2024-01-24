@@ -40,6 +40,7 @@ public class ViewplanActivity extends AppCompatActivity {
         String time = intent.getStringExtra("time");
         String description = intent.getStringExtra("description");
 
+
         TextView planNameTextView = findViewById(R.id.textViewPlanName);
         TextView dayOfWeekTextView = findViewById(R.id.textViewDayOfWeek);
         TextView timeTextView = findViewById(R.id.textViewTime);
@@ -65,7 +66,7 @@ public class ViewplanActivity extends AppCompatActivity {
     private String getDayOfWeekString(int dayOfWeekId) {
         String[] daysOfWeek = {"", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota", "Nedjelja"};
 
-        if (dayOfWeekId >= 0 && dayOfWeekId < daysOfWeek.length) {
+        if (dayOfWeekId > 0 && dayOfWeekId <= daysOfWeek.length) {
             return daysOfWeek[dayOfWeekId];
         } else {
             return "Invalid Day";

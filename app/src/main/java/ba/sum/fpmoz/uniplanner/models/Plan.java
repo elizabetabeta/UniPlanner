@@ -6,7 +6,7 @@ public class Plan {
     private String dayOfWeek;
     private String time;
     private String description;
-    private int dayOfWeekId;
+    private Integer dayOfWeekId;
     private String userId;
 
     public Plan() {
@@ -61,11 +61,11 @@ public class Plan {
         this.description = description;
     }
 
-    public int getDayOfWeekId() {
+    public Integer getDayOfWeekId() {
         return dayOfWeekId;
     }
 
-    public void setDayOfWeekId(int dayOfWeekId) {
+    public void setDayOfWeekId(Integer dayOfWeekId) {
         this.dayOfWeekId = dayOfWeekId;
     }
 

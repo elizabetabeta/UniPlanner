@@ -72,9 +72,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         userProfileIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +165,7 @@ public class ProfileActivity extends AppCompatActivity {
             fileReference.putFile(imageUri)
                     .addOnSuccessListener(taskSnapshot -> {
                         progressDialog.dismiss();
-                        Toast.makeText(ProfileActivity.this, "Slika profila promijenja!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this, "Slika profila promijenjena!", Toast.LENGTH_SHORT).show();
 
                         fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
                             firebaseUser.updateProfile(buildProfileUpdateRequest(uri.toString()))

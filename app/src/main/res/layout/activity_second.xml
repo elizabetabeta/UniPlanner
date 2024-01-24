@@ -81,14 +81,14 @@
                             app:layout_constraintVertical_bias="0.049"
                             tools:text="PONEDJELJAK" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNamePon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutPon"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/Ponedjeljak" />
 
@@ -140,16 +140,17 @@
                             app:layout_constraintVertical_bias="0.069"
                             tools:text="UTORAK" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNameUto"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutUto"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Utorak" />
+                            app:layout_constraintTop_toBottomOf="@+id/Utorak">
+                        </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -184,16 +185,17 @@
                             app:layout_constraintVertical_bias="0.039"
                             tools:text="SRIJEDA" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNameSri"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutSri"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Srijeda" />
+                            app:layout_constraintTop_toBottomOf="@+id/Srijeda">
+                        </LinearLayout>
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -243,16 +245,17 @@
                             app:layout_constraintVertical_bias="0.069"
                             tools:text="ČETVRTAK" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNameCet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutCet"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Četvrtak" />
+                            app:layout_constraintTop_toBottomOf="@+id/Četvrtak">
+                        </LinearLayout>
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -288,16 +291,17 @@
                             app:layout_constraintVertical_bias="0.039"
                             tools:text="PETAK" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNamePet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutPet"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Petak" />
+                            app:layout_constraintTop_toBottomOf="@+id/Petak">
+                        </LinearLayout>
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -346,16 +350,17 @@
                             app:layout_constraintVertical_bias="0.049"
                             tools:text="SUBOTA" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNameSub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutSub"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Subota" />
+                            app:layout_constraintTop_toBottomOf="@+id/Subota">
+                        </LinearLayout>
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -390,16 +395,17 @@
                             app:layout_constraintVertical_bias="0.059"
                             tools:text="NEDJELJA" />
 
-                        <TextView
-                            android:id="@+id/textViewPlanNameNed"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:text="- "
+                        <LinearLayout
+                            android:id="@+id/planContainerLayoutNed"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/Nedjelja" />
+                            app:layout_constraintTop_toBottomOf="@+id/Nedjelja">
+                        </LinearLayout>
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
