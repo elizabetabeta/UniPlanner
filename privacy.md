@@ -22,4 +22,4 @@ Studentski Projekt:
 Ova aplikacija je rezultat studentskog projekta iz kolegija "Napredni razvoj aplikacija za mobilne uređaje". Ona nije komercijalni proizvod i služi isključivo u edukativne svrhe.
 
 Prikupljanje Podataka:
-Ako aplikacija prikuplja bilo kakve podatke, to će biti jasno navedeno unutar same aplikacije, a prikupljeni podaci bit će obrađeni u skladu s Pravilima privatnosti.
+Naša aplikacija prikuplja podatke prilikom registracije korisnika. Ovi podaci koriste se isključivo za autentikaciju i pružanje personaliziranog korisničkog iskustva unutar aplikacije. Ne dijelimo ove podatke s trećim stranama.
