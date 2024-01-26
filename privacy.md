@@ -3,8 +3,8 @@ Autori i Pravne Napomene
 Aplikacija UniPlanner
 
 Tim:
-Elizabeta Miličević
-Monika Marić
+Elizabeta Miličević,
+Monika Marić,
 Ivana Vasilj
 
 Svi članovi tima su studenti koji su sudjelovali u razvoju ove aplikacije kao dio kolegija "Napredni razvoj aplikacija za mobilne uređaje". Projekat je nastao kao studentski projekt na diplomskom studiju Informatike Sveučilišta u Mostaru.
